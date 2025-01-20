@@ -1,0 +1,178 @@
+  /* Reset básico */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #ffffff;
+  }
+
+  header {
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 20px;
+    background-color: #004d80;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+/* Titulo Cabecera */
+  header h1 {
+    font-size: 2rem;
+    color: #ffffff;
+  }
+/* Enunciado Cabecera */
+  header p {
+    font-size: 1rem;
+    color: #000000;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+  }
+
+  .card .icon img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 15px;
+  }
+
+  .card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  .btn.blue {
+    background-color: #004d80;
+  }
+
+  .btn.green {
+    background-color: #004d80;
+  }
+
+  .btn.yellow {
+    background-color: #004d80;
+    color: rgb(255, 255, 255);
+  }
+
+  .btn.red {
+    background-color: #004d80;
+  }
+
+  .btn.purple {
+    background-color: #004d80;
+  }
+
+  .btn.orange {
+    background-color: #004d80;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #004d80;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
+
+  .sidebar .logo img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+  }
+
+  .sidebar ul li {
+    width: 100%;
+  }
+
+  .sidebar ul li a {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s;
+  }
+
+  .sidebar ul li a:hover {
+    background-color: #a6a9ac
+  }
+
+  .main-content {
+    margin-left: 270px;
+    padding: 20px;
+  }
+
+/* Estilo para el botón de Cerrar Sesión */
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  color: #fff;
+}
+
+.btn-danger i {
+  margin-right: 6px; 
+  font-size: 14px;
+}

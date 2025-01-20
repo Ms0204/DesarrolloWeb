@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Gestión</title>
+  <!-- Fuente Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Fuente css -->
+  <link href="./styles.css" rel="stylesheet">
+    <!-- FontAwesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="../../Static/Img/marine_16484329.png" alt="Logo del Sistema">
+    </div>
+    <ul>
+      <li><a href="../PgUsuarios/ListaUsuarios.html">Gestión de Usuarios</a></li>
+      <li><a href="../PgInventarios/inventarios.html">Gestión de Inventarios</a></li>
+      <li><a href="../PgPagos/pagos.html">Gestión de Pagos</a></li>
+      <li><a href="../PgReportes/reportes.html">Gestión de Reportes</a></li>
+      <li><a href="../PgIngresos/Ingregos.html">Gestión de Ingresos</a></li>
+      <li><a href="../Pg.Egresos/Egresos.html">Gestión de Egresos</a></li>
+      <li><a href="../Pg.Productos/productos.html">Gestión de Productos</a></li>
+      <li><a href="../Pg.Categoria/categoria.html">Gestión de Categorías</a></li>
+      <li><a></a></li>
+      <!-- <li><a href="../PgRol/rol.html">Gestión de Roles</a></li> -->
+      <li>
+        <a href="../../index.html" class="btn btn-danger d-flex align-items-center" onclick="return confirmarCerrarSesion()">
+          <i class="fas fa-sign-out-alt me-2"></i> Cerrar Sesión
+        </a>
+    </ul>
+  </div>
+  <div class="main-content">
+    <header>
+      <h1>Bienvenido al Sistema</h1>
+      <!--<p>Sistema para la gestión eficiente que automatiza procesos, minimiza errores y optimiza recursos, con el objetivo de mejorar la productividad de la empresa.</p> -->
+    </header>
+
+    <main>
+      <div class="grid-container">
+      <!-- Gestión de Usuarios -->
+      <div class="card">
+        <div class="icon">
+          <img src="../../Static/Img/Icons/agregar-usuario.png" alt="Icono Usuarios">
+        </div>
+        <h2>Gestión de Usuarios</h2>
+        <p>Administra la información de usuarios registrados en el sistema.</p>
+        <a href="../PgUsuarios/ListaUsuarios.html" class="btn blue">Ir a Usuarios</a>
+      </div>
+      <!-- Gestión de Inventarios -->
+      <div class="card">
+        <div class="icon">
+          <img src="../../Static/Img/Icons/inventario.png" alt="Icono Inventarios">
+        </div>
+        <h2>Gestión de Inventarios</h2>
+        <p>Monitorea y organiza el inventario de productos o artículos disponibles.</p>
+        <a href="../PgInventarios/inventarios.html" class="btn green">Ir a Inventarios</a>
+      </div>
+
+      <!-- Gestión de Pagos -->
+      <div class="card">
+        <div class="icon">
+          <img src="../../Static/Img/Icons/metodo-de-pago.png" alt="Icono Pagos">
+        </div>
+        <h2>Gestión de Pagos</h2>
+        <p>Supervisa y controla los pagos realizados en el sistema.</p>
+        <a href="../PgPagos/pagos.html" class="btn yellow">Ir a Pagos</a>
+      </div>
+
+      <!-- Gestión de Reportes -->
+      <div class="card">
+        <div class="icon">
+          <img src="../../Static/Img/Icons/reporte.png" alt="Icono Reportes">
+        </div>
+        <h2>Gestión de Reportes</h2>
+        <p>Genera y consulta reportes detallados sobre la operación del sistema.</p>
+        <a href="../PgReportes/reportes.html" class="btn red">Ir a Reportes</a>
+      </div>
+
+      <!-- Gestión de Ingresos -->
+      <div class="card">
+        <div class="icon">
+          <img src="../../Static/Img/Icons/ingresos.png" alt="Icono Ingresos">
+        </div>
+        <h2>Gestión de Ingresos</h2>
+        <p>Administra y supervisa los ingresos en el sistema.</p>
+        <a href="../PgIngresos/Ingregos.html" class="btn purple">Ir a Ingresos</a>
+      </div>
+
+      <!-- Gestión de Egresos -->
+      <div class="card">
+        <div class="icon">
+          <img src="../../Static/Img/Icons/egresos.png" alt="Icono Egresos">
+        </div>
+        <h2>Gestión de Egresos</h2>
+        <p>Controla y monitorea los egresos realizados en el sistema.</p>
+        <a href="../Pg.Egresos/Egresos.html" class="btn orange">Ir a Egresos</a>
+      </div>
+
+      <!-- Gestión de Productos -->
+      <div class="card">
+        <div class="icon">
+          <img src="../../Static/Img/Icons/agregar-producto.png" alt="Icono Productos">
+        </div>
+        <h2>Gestión de Productos</h2>
+        <p>Administra los productos disponibles en el sistema.</p>
+        <a href="../Pg.Productos/productos.html" class="btn blue">Ir a Productos</a>
+      </div>
+
+      <!-- Gestión de Categoría -->
+      <div class="card">
+        <div class="icon">
+          <img src="../../Static/Img/Icons/categorias.png" alt="Icono Categoría">
+        </div>
+        <h2>Gestión de Categorías</h2>
+        <p>Organiza las categorías de productos en el inventario.</p>
+        <a href="../Pg.Categoria/categoria.html" class="btn green">Ir a Categorías</a>
+      </div>
+
+      <!-- Gestión de Roles 
+      <div class="card">
+        <div class="icon">
+          <img src="../../Static/Img/roles.png" alt="Icono Roles">
+        </div>
+        <h2>Gestión de Roles</h2>
+        <p>Define y administra los roles de usuarios en el sistema.</p>
+        <a href="../PgRol/rol.html" class="btn red">Ir a Roles</a>
+      </div>
+    </div>
+    <main> -->
+      <!-- Contenido principal aquí -->
+    </main>
+  </div>
+</body>
+<script src="home.js"></script>
+</html>
