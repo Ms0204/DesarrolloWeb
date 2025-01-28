@@ -1,0 +1,221 @@
+      /* Reset de estilos para eliminar márgenes y padding predeterminados */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+        /* Estilo general del body */
+      body {
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+        color: #333;
+        display: flex;
+      }
+      
+        /* Barra lateral de navegación */
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        background-color: #004d80;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #a6a9ac #004d80;
+      }
+      
+        /* Estilos del scroll en la barra lateral */
+      .sidebar::-webkit-scrollbar {
+        width: 8px;
+      }
+      
+      .sidebar::-webkit-scrollbar-thumb {
+        background-color: #a6a9ac;
+        border-radius: 4px;
+      }
+      
+        /* Logo dentro de la barra lateral */
+      .sidebar .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      
+      .sidebar .logo img {
+        width: 100px;
+        height: 90px;
+      }
+      
+        /* Lista de navegación dentro de la barra lateral */
+      .sidebar ul {
+        list-style: none;
+        width: 100%;
+        padding: 0;
+      }
+      
+      .sidebar ul li {
+      width: 100%;
+      }
+      
+      .sidebar ul li a {
+        display: block;
+        padding: 13px 15px;
+        color: white;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: background 0.3s;
+        text-align: center;
+      }
+      
+        /* Cambio de color en hover para los enlaces de la barra lateral */
+      .sidebar ul li a:hover {
+        background-color: #a6a9ac;
+      }
+      
+        /* Contenedor de tarjetas con diseño de grid */
+      .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+      }
+      
+        /* Estilos de las tarjetas */
+      .card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      }
+      
+        /* Efecto hover para levantar la tarjeta */
+      .card:hover {
+      transform: translateY(-5px);
+      }
+      
+      .card .icon img {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 15px;
+      }
+      
+        /* Título dentro de la tarjeta */
+      .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #333;
+      }
+      
+        /* Texto dentro de la tarjeta */
+      .card p {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 15px;
+      }
+      
+        /* Botón de cierre de sesión */
+      .btn-danger {
+        background-color: #dc3545;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        display: block;
+        margin: 20px auto;
+        width: 80%;
+      }
+      
+        /* Estilo general de botones */
+      .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1rem;
+      background-color: #004d80;
+      color: white;
+      cursor: pointer;
+      }
+      
+        /* Icono dentro del botón de cerrar sesión */
+      .btn-danger i {
+      margin-right: 6px; 
+      font-size: 14px;
+      }
+      
+        /* Botón para abrir/cerrar el menú en pantallas pequeñas */
+      .menu-toggle {
+        display: none;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: #004d80;
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 1100;
+      }
+      
+        /* Contenedor principal de la página */
+      .main-content {
+        margin-left: 270px;
+        padding: 20px;
+        flex-grow: 1;
+      }
+      
+        /* Encabezado de la página */
+      header {
+        margin-bottom: 30px;
+        text-align: center;
+        padding: 20px;
+        background-color: #004d80;
+        color: white;
+        margin-bottom: 20px;
+        border-radius: 8px;
+      }
+      
+        /* Título en el encabezado */
+      header h1 {
+      font-size: 2rem;
+      color: #ffffff;
+      }
+      
+        /* Texto debajo del título en el encabezado */
+        header p {
+      font-size: 1rem;
+      color: #000000;
+      }
+      
+        /* Media queries para hacer la página responsive */
+      @media (max-width: 768px) {
+          /* Oculta la barra lateral en móviles */
+        .sidebar {
+          transform: translateX(-100%);
+        }
+            /* Muestra la barra lateral cuando está activa */
+        .sidebar.active {
+          transform: translateX(0);
+        }
+            /* Muestra el botón de menú en móviles */
+        .menu-toggle {
+          display: block;
+        }
+            /* Ajusta el contenido principal en móviles */
+        .main-content {
+          margin-left: 0;
+        }
+      }
