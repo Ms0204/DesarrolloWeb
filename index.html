@@ -150,26 +150,44 @@
     </div>
   </div>
 
-  <!-- Modal de recuperación de contraseña -->
-  <div class="modal fade" id="recoverPasswordModal" tabindex="-1" aria-labelledby="recoverPasswordModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="recoverPasswordModalLabel">Recuperar Contraseña</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body">
-          <form action="#" method="POST">
-            <div class="mb-3">
-              <label for="email" class="form-label">Correo electrónico</label>
-              <input type="email" name="email" class="form-control" id="email" placeholder="Ingresa tu correo" required>
-            </div>
-            <button type="submit" class="btn btn-danger w-100">Recuperar contraseña</button>
-          </form>
-        </div>
+  <!-- ...existing code... -->
+<!-- Modal de recuperación de contraseña -->
+<div class="modal fade" id="recoverPasswordModal" tabindex="-1" aria-labelledby="recoverPasswordModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="recoverPasswordModalLabel">Recuperar Contraseña</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form id="recoverPasswordForm" action="#" method="POST" onsubmit="return sendRecoveryEmail()">
+          <div class="mb-3">
+            <input type="email" name="email" class="form-control" placeholder="Correo Electronico" required>
+          </div>
+          <button type="submit" class="btn btn-danger w-100"">Enviar</button>
+        </form>
       </div>
     </div>
   </div>
+</div>
+
+<!-- Modal de confirmación -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmationModalLabel">Éxito</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <p>Se ha enviado el correo de recuperación exitosamente.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Script para mostrar/ocultar la contraseña -->
@@ -189,7 +207,52 @@ function redirectToHomePage() {
   window.location.href = './Paginas/PgHome/home.html';
   return false; 
 }
+
+function sendRecoveryEmail() {
+    event.preventDefault(); // Evita el envío normal del formulario
+    
+    // Obtener el correo ingresado
+    let emailInput = document.querySelector('#recoverPasswordForm input[name="email"]');
+    let email = emailInput.value.trim();
+    
+    if (!email) {
+        alert("Por favor, ingrese un correo electrónico válido.");
+        return false;
+    }
+    
+    // Simulación de envío de correo (aquí iría una llamada AJAX a un backend real)
+    setTimeout(() => {
+        // Cerrar el modal de recuperación
+        let recoverModalEl = document.getElementById('recoverPasswordModal');
+        let recoverModal = bootstrap.Modal.getInstance(recoverModalEl);
+        if (recoverModal) {
+            recoverModal.hide();
+            recoverModalEl.classList.remove('show');
+            document.body.classList.remove('modal-open');
+            let backdrop = document.querySelector('.modal-backdrop');
+            if (backdrop) backdrop.remove();
+        }
+
+        // Mostrar el modal de confirmación
+        let confirmationModalEl = document.getElementById('confirmationModal');
+        let confirmationModal = new bootstrap.Modal(confirmationModalEl);
+        confirmationModal.show();
+
+        // Cerrar el modal de confirmación automáticamente después de 3 segundos
+        setTimeout(() => {
+            let confirmationInstance = bootstrap.Modal.getInstance(confirmationModalEl);
+            if (confirmationInstance) {
+                confirmationInstance.hide();
+                confirmationModalEl.classList.remove('show');
+                document.body.classList.remove('modal-open');
+                let backdrop = document.querySelector('.modal-backdrop');
+                if (backdrop) backdrop.remove();
+            }
+        }, 3000);
+    }, 1000); // Simula un pequeño retraso
+    
+    return false; // Evita la recarga de la página
+}
   </script>
 </body>
-</html>
-
+</html> 
